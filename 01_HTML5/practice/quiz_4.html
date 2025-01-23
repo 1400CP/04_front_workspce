@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="test.do">
+        <label for="cus">고객명 : </label>
+        <input type="text" name="userId" id="cus" required>
+        <br>
+        <br>
+        <label for="phone">전화번호 : </label>
+        <input type="tel" name="userPhone" id="phone" required>
+        <br>
+        <br>
+        <label for="email">E-mail : </label>
+        <input type="email" name="email" id="email">
+        <br>
+        <br>
+        <fieldset>
+            <legend>피자 사이즈</legend>
+                <input type="radio" name="pizza" value="Small" checked> Small <br>
+                <input type="radio" name="pizza" value="Medium"> Medium <br>
+                <input type="radio" name="pizza" value="Large"> Large <br>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>토핑 선택</legend>
+                <input type="checkbox" name="to" value="b"> 베이컨 <br>
+                <input type="checkbox" name="to" value="c"> 치즈 <br>
+                <input type="checkbox" name="to" value="o"> 양파 <br>
+                <input type="checkbox" name="to" value="m"> 버섯 <br>
+        </fieldset>
+        <br>
+        <label for="wdate">희망 배송 시간 : </label>
+        <input type="time" name="wdate">
+        <br>
+        <br>
+        배송 시 요청사항 :
+        <br>
+        <textarea style="resize:none" name="request">
+        
+        </textarea>
+        <br>
+        <br>
+    <input type="submit" value="주문하기">
+
+    </form>
+</body>
+</html>
