@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ul1{
+            list-style-type: disc;
+            list-style-type: circle;
+            list-style-type: square;
+            list-style-type: none;
+            /* 이걸 많이 씀 */
+            list-style-image: url("assets/image/icon.png");
+        }
+
+        #ol1{
+            list-style-type: decimal;
+            list-style-type: decimal-leading-zero;
+            list-style-type: lower-alpha;
+            list-style-type: upper-alpha;
+            list-style-type: lower-roman;
+            list-style-type: upper-roman;
+            list-style-position: inside;
+            /* 원래는 outside가 기본값입니다. */
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>목록 관련 스타일</h1>
+
+    <h3>list-style-type : 불릿기호를 변경 때 사용</h3>
+    <h3>list-style-image : 불릿기호를 이미지로 적용할 때 사용</h3>
+    <h3>list-style-position : 불릿기호 위치를 조정할 때 사용</h3>
+
+    <pre>
+        * 순서가 없는 목록(ul)
+        선택자{
+            list-style-type : disc | circle | square | none;
+            list-style-image : url(적용을 시키고자 하는 이미지 경로)
+        }
+        * 순서가 있는 목록(ol) => 타입으로 원래 바꿀 수 있지만 스타일로도 변경 가능
+        선택자{
+            list-style-type : decimal | decimal-leading-zero;
+            list-style-type : lower-alpha | upper-alpha;
+            list-style-type : lower-roman | upper-roman;
+            list-style-position : inside | outside;
+        }
+
+    </pre>
+
+    <h4>순서 없는 list</h4>
+    <ul id="ul1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+
+    <h4>순서 있는 list</h4>
+    <ol id="ol1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ol>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
