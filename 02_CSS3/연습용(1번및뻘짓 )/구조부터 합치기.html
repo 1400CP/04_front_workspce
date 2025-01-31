@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid red;
+            box-sizing: border-box;
+            margin: auto;
+        }
+        .head{
+            width: 1000px;
+            height: 400px;
+        }
+        #search, #menu{
+            width: 100%;
+        }
+        #search{
+            height: 60%;
+        }
+        #menu>ul{
+            height: 40%;
+            list-style: none;
+
+        }
+
+        .content{
+            width: 1000px;
+            height: 800px;
+        }
+
+        .footer{
+            width: 1000px;
+            height: 800px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--
+        header_1,2
+        content 1,2
+        footer 1
+    -->
+    <div class="head">
+        <div id="search">
+            <input type="text" id="textwindow" name="searchtext">
+            <input type="submit" id="clickwindow"  name="submit" value="검색">
+        </div>
+        <div id="menu">
+            <ul id="menu_1">
+                <li><b></b></li>
+                <li><b>Java</b></li>
+                <li><b>Oracle</b></li>
+                <li><b>Front-End</b></li>
+                <li><b>Server</b></li>
+                <li><b>Framework</b></li>
+                <li><b></b></li>
+                <li><b></b></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div></div>
+        <div id="login"></div>
+    </div>
+
+    <div class="footer">
+        <div id="footm"></div>
+    </div>
+
+
+</body>
+</html>
+

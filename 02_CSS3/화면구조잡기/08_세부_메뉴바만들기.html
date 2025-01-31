@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{box-sizing: border-box; border: 1px solid red;}
+        #navigator{width: 1000px; height: 40px;} /* 임시용 */
+        
+        #navi{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        /* 대메뉴 5개 */
+        #navi>li{
+            border: 1px solid blue;
+            float: left;
+            width: 15%;
+            height: 100%;
+            text-align: center;
+        }
+
+        #navi a{
+            border: 1px solid orange;
+            text-decoration-line: none;
+            color: orange;
+            font-size: 18px;
+            font-weight: 900;
+
+            width: 100%;
+            height: 100%; /* 인라인 요소는 가로세로 크기 지정 불가요 */
+            display: block; /* 블록은 w, h를 가질 수 있다. */
+            /* vertical-align: middle; vertical-align 인라인일 때만 가능하다. */
+            line-height: 35px;
+        }
+        
+        #navi a:hover{
+            color: orangered;
+        }
+        /* 소메뉴 ul, 후손들이얌 */
+        #navi>li>ul{
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+        /* 어떻게 해야 대메뉴만 보였다가 소메뉴가 나오게 할까? 정답은 display */
+        #navi>li>a:hover+ul{
+            display: block;
+        }
+        #navi>li>ul:hover{
+            display: block;
+        }
+        #navi>li>ul a{
+            font-size: 15px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="navigator">
+        <ul id="navi">
+            <li><a href="">Java</a></li>
+            <li><a href="">Oracle</a></li>
+            <li><a href="">Front-End</a>
+                <ul>
+                    <li><a href="">HTML</a></li>
+                    <li><a href="">CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">jQuery</a></li>
+                </ul>
+            </li>
+            <li><a href="">Server</a>
+                <ul>
+                    <li><a href="">JDBC</a></li>
+                    <li><a href="">Servlet</a></li>
+                    <li><a href="">JSP</a></li>
+                    <li><a href="">AJAX</a></li>
+
+                </ul>
+            </li>
+            <li><a href="">Framework</a>
+                <ul>
+                    <li><a href="">myBatis</a></li>
+                    <li><a href="">Spring</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
