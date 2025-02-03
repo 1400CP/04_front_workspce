@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            border:1px solid blue;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            margin: auto;
+        }
+        .box>div{
+            width: 100%;
+        }
+        #header{
+            height: 15%;
+        }
+        #list{
+            height: 10%;
+        }
+        #content{
+            height: 55%;
+        }
+        #footer{
+            height: 20%;
+        }
+
+        #header>div{
+            height: 100%;
+        }
+        #header1_1, #header1_3{
+            width: 20%;
+        }
+        #header1_2{
+            width: 60%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div id="header">
+            <div id="header1_1"></div>
+            <div id="header1_2"></div>
+            <div id="header1_3"></div>
+        </div>
+
+        <div id="list"></div>
+
+        <div id="content">
+            <div id="content1_1"></div>
+            <div id="content1_2">
+                <div id="content1_2_1"></div>
+                <div id="content1_2_2"></div>
+            </div>
+            <div id="content1_3"></div>
+            <div id="content1_4">
+                <div id="content1_4_1"></div>
+                <div id="content1_4_2"></div>
+                <div id="content1_4_3"></div>
+                <div id="content1_4_4"></div>
+            </div>
+            <div id="content1_5"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+</body>
+</html>
