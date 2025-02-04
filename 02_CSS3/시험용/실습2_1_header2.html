@@ -7,15 +7,23 @@
     <style>
         div{
             border: 1px solid blue;
-            width: 400px;
-            height: 100px;
+            width: 140px;
+            height: 20px;
+            box-sizing: border-box;
         }
-        #header1_2{
-            width: 20%;
+        #text{
+            width: 70%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        #search{
+            width: 30%;
+            height: 100%;
             background-image: url("../실습_v2/image/search.png");
             background-position: center;
             background-repeat: no-repeat;
-            background-size: left;
+            background-size: contain;
         }
 
     </style>
@@ -24,7 +32,8 @@
     
     
     <div id="header1_2">
-        <input type="text">
+        <input type="text" id="text">
+        <input type="submit" id="search" value="">
     </div>
 
 </body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+
+        .wrap{
+            width: 100%; /* 뷰포트 기준 화면 전체 너비 100% 다 사용 */
+            max-width: 1300px;
+            margin: auto;
+
+            /* header, navigator, content, footer를 세로 배치 */
+            display: flex;
+            flex-direction: column;
+            /* header, navigator, content, footer 자동으로 width가 부모의 100% 차지하게 됨 */
+        }
+
+        .header, .footer{
+            height: 150px;
+        }
+
+        .navigator{
+            height: 50px;
+        }
+
+        .content{
+            min-height: 500px;
+            /* 안에 정보가 많아지면 자동으로 늘어나야 한다. => 고정시킬 수는 없다.
+            단, 정보가 적을 경우 최소 높이는 지정해두는 게 좋다. */
+        }
+
+        .header{
+            display: flex;
+            flex-direction: row; /* 기본값 */
+            /* header1 ~ header3 까지는 부모의 높이 100% */
+        }
+        .header1, .header3{
+            width: 20%;
+        }
+        .header2{
+            width: 60%;
+        }
+
+        .content{
+            display: flex;
+        }
+        .content1{
+            width: 15%;
+        }
+        .content2{
+            width: 60%;
+        }
+        .content3{
+            width: 25%;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="header">
+            <div class="header1"></div>
+            <div class="header2"></div>
+            <div class="header3"></div>
+        </div>
+
+        <div class="navigator"></div>
+
+        <div class="content">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+
+        <div class="footer"></div>
+    </div>
+
+</body>
+</html>
