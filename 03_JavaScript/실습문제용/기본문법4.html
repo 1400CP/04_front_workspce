@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            border: none;
+        }
+        #area1{
+            width: 400px;
+        }
+        .height{
+            height: 200px;
+        }
+        .area{
+            border: 1px solid black;
+        }
+        #area1, #area2{
+            border: 1px solid red;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="title">문제1. 다음 보기에 있는 텍스트 필드에 작성한 문자열의 길이를 알아올 수 있도록 구현하시오.</div>
+    <form action="">
+        <fieldset>
+            <legend>보기</legend>
+                <input type="text" id="quiz1">
+        </fieldset>
+    </form>
+    
+    <div id="area1" class="height"></div>
+    <button onclick="textCheck()">확인하기</button>
+    <script>
+        function textCheck(){
+            const area1 = document.getElementById("area1");
+            const quiz1 = document.getElementById("quiz1").value;
+
+            area1.innerHTML = "보기의 문자열 길이는 " + quiz1.length + "글자입니다." + "<br>"
+        }
+    </script>
+
+    <br><br><br>
+
+    <div class="area">문제2. 다음 보기에 있는 문자열을 ,(콤마)를 기준으로 잘라내어 하나하나 출력하시오.
+        <form action="">
+            <fieldset>
+                <legend>보기</legend>
+                <div>콜라,사이다,햄버거,피자,한약</div>
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <div id="area2" class="height"></div>
+    <button onclick="foodCheck()">확인하기</button>
+        <script>
+            function foodCheck(){
+                const area2 = document.getElementById("area2");
+                const arr = ["콜라","사이다","햄버거","피자","한약"];
+
+                for(let i=0; i<arr.length; i++){
+                    area2.innerHTML += (i+1) + "." + arr[i] + "<br>";
+                }
+            }
+        </script>
+
+    <h3>간이 계산기 만들기</h3>
+    <div id="first">
+        첫번째 값 : 
+        <input type="number" id="num1">
+    </div>
+    <div id="second">
+        두번째 값 : 
+        <input type="number" id="num2">
+    </div>
+
+    <button onclick="plus()"> + </button>
+        <script>
+            function plus(){
+                const num1 = document.getElementById("num1").value;
+                const num2 = document.getElementById("num2").value;
+
+                const sum = Number(num1) + Number(num2);
+                document.getElementById("result").innerHTML = sum;
+            }
+        </script>
+
+    <button onclick="minus()"> - </button>
+        <script>
+            function minus(){
+                const num1 = document.getElementById("num1").value;
+                const num2 = document.getElementById("num2").value;
+
+                const minus = Number(num1) - Number(num2);
+                document.getElementById("result").innerHTML = minus;
+            }
+        </script>
+
+    <button onclick="multy()"> x </button>
+        <script>
+            function multy(){
+                const num1 = document.getElementById("num1").value;
+                const num2 = document.getElementById("num2").value;
+
+                const multy = Number(num1) * Number(num2);
+                document.getElementById("result").innerHTML = multy;
+            }
+        </script>
+
+    <button onclick="divi()"> / </button>
+        <script>
+            function divi(){
+                const num1 = document.getElementById("num1").value;
+                const num2 = document.getElementById("num2").value;
+
+                const divi = Number(num1) / Number(num2);
+                document.getElementById("result").innerHTML = divi;
+            }
+        </script>
+
+    <button onclick="per()"> % </button>
+        <script>
+            function per(){
+                const num1 = document.getElementById("num1").value;
+                const num2 = document.getElementById("num2").value;
+
+                const per = (parseFloat(num1) / 100) * parseFloat(num2);
+                document.getElementById("result").innerHTML = per;
+            }
+        </script>
+
+    <br><br>
+    <div id="result">계산 결과 : </div>  
+
+    <hr>
+
+
+</body>
+</html>

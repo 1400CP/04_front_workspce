@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border: 1px solid black;
+        }
+        .big{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h4>배열실습문제 1</h4>
+    <div>
+        다음 보기에 있는 데이터들은 배열로 받고 하나의 배열로 합쳐보세요<br>
+        이때 입력 필드에 배열에 있는 데이터를 전송하면 배열의 alert를 통하여<br>
+        배열의 위치를 알려주고, 없으면 "존재하지 않습니다."를 알려주면 됩니다.
+    </div>
+
+    <form action="">
+        <fieldset>
+            <legend>보기</legend>
+                <div>
+                    사과,바나나,당근,<br>
+                    김밥,치즈,떡볶이,햄버거,<br>
+                    환타,사이다,콜라,<br>
+                    고양이,강아지
+                </div>
+        </fieldset>
+    </form>
+    <br>
+    <div id="area1" class="area big"></div>
+    <input type="text" id="find" placeholder="찾을 문자열을 입력하세요">
+    <button onclick="tranS()">전송 및 처리</button>
+    <script>
+        function tranS(){
+            const area1 = document.getElementById("area1");
+            const find = document.getElementById("find");
+            const arr = ["사과","바나나","당근","김밥","치즈","떡볶이","햄버거","환타","사이다","콜라","고양이","강아지"];
+
+            area1.innerHTML += "arr : " + arr + "<br>"
+
+        }
+
+    </script>
+
+
+</body>
+</html>
