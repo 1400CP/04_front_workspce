@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            background-color: rgb(138, 138, 138)
+        }
+        div{
+            background-color: rgb(255, 166, 0)
+        }
+    </style>
+</head>
+<body>
+    <!-- display가 중요했구나. 함수선언식부터 내가 이해를 했어야 했네. -->
+    <script>
+        const check1 = function(id){
+            console.log(id);
+            const test2 = document.getElementById(id);
+                if(id === "title"){
+                    title1.style.display = "block";
+                }else{
+                    title1.style.display = "none";
+                }
+                if(id === "date"){
+                    date2.style.display = "block";
+                }else{
+                    date2.style.display = "none";
+                }
+                if(id === "author"){
+                    author3.style.display = "block";
+                }else{
+                    author3.style.display = "none";
+                }
+        }
+    </script>
+    
+    <h4>자바스크립트 함수 실습문제</h4>
+    <p>함수실습문제10</p>
+    <fieldset background-color="gray"> 
+        <legend>검색할 항목을 선택하세요</legend>
+            <input type="radio" id="title" name="check" value="textBox" onclick="check1(this.id)">
+                <label for="title">제목</label>    
+            <input type="radio" id="date" name="check" value="textBox" onclick="check1(this.id)">
+                <label for="date">날짜</label>
+            <input type="radio" id="author" name="check" value="textBox" onclick="check1(this.id)">
+                <label for="author">작성자</label>
+    </fieldset>
+    <hr>
+    <div id="title1" value="textBox" style="display: none">검색할 제목을 입력하세요 : 
+        <input type="text">
+        <input type="button" value="검색">
+    </div>
+
+    <div id="date2" value="textBox" style="display: none"> 검색할 날짜를 선택하세요 : 
+        <input type="date"> -
+        <input type="date">
+        <input type="button" value="검색">
+    </div>
+
+    <div id="author3" value="textBox" style="display: none"> 검색할 작성자 아이디를 입력하세요 : 
+        <input type="text">
+        <input type="button" value="검색">
+    </div>
+
+
+
+</body>
+</html>

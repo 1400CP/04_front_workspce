@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border : 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        #color{
+            color : rgb(100, 100, 100);
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <h4>색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기</h4>
+
+    <div id="area1" class="area big" style="background-color: none";></div>
+    <input type="color" id="color">
+    <button onclick="changeColor()">변경</button> <!-- 버튼을 누르면 function 안에 있는 내용을 수행-->
+    <script>
+        function changeColor(){
+            var area2 = document.getElementById("area1");
+
+            // console.log(area2.style.backgroundColor); // 인터넷 창에서 버튼 클릭하면 red라고 나옴
+            if(area2.style.backgroundColor == "none"){ // 아이디가 area2인 style속성의 backroundColor 요소 값이 red와 같다면
+                area2.style.backgroundColor = document.getElementById(color); // area2의 style속성의 backroundColor 요소 값을 yellow로 변경
+            }else{
+                area2.style.backgroundColor = "green";
+            }
+        }
+    </script>
+        
+
+    </script>
+
+</body>
+</html>

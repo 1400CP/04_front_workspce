@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            border : 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="test1" class="test"></div>
+    <button onclick="test1()">실행</button>
+
+    <script>
+        function test1(){
+            const message = prompt("메세지를 입력 : ");
+            const nope = "";
+            
+            const test1 = document.getElementById("test1");
+            
+
+            if(message == nope){
+                alert("메시지가 입력되지 않았습니다");
+            }else{
+                document.write(message);
+            }
+        }
+    </script>
+
+
+    <div id="test2" class="test"></div>
+    <button onclick="test2()">실행</button>
+
+    <script>
+        function test2(){
+            const message = confirm("개인정보활용에 동의하시겠습니까?")
+            const test2 = document.getElementById("test2");
+
+            if(message){
+                alert("당신의 개인정보가 유출되었습니다")
+            }else{
+                alert("당신은 개인정보 유출을 막았습니다")
+            }
+
+        }
+
+    </script>
+
+    <div id="test3" class="test">
+        <ul></ul>
+    </div>
+    <button onclick="test3()">실행</button>
+    <script>
+        function test3(){
+            const test3 = document.getElementById("test3");
+                        
+            for(let i=0; i<10; i++){
+                Math.floor((Math.random() * 100)) + "<br>";
+            }
+
+        }
+        
+    </script>
+
+    <div width="200px" height="200px"></div>
+    <input type="text" name="img">
+    <button onclick="png()"> 출력 </button>
+    <script>
+        function png(){
+            const img = document.getElementsByName("img");
+
+            document.write(div.img-container);
+
+        }
+
+    </script>
+
+
+</body>
+</html>

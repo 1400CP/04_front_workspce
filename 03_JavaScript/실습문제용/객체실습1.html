@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #output{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>객체 실습 문제</h2>
+
+    <pre>
+    문제1.
+    다음 입력 버튼을 클릭하면 이름,나이,주소를 prompt로 입력 받은 후 입력 받은 정보를
+    member 라는 객체에 저장
+    이후 출력 버튼을 클릭하면 member 객체 안에 있는 정보를
+    출력 창에 출력되도록 만들기
+    단, 입력을 받지 않은 상태에서 출력 버튼을 클릭시
+    입력을 먼저 해달라는 입력을 띄우도록
+    ex)
+    이름 : OOO
+    나이 : OO세
+    주소 : XXX XXXX XXXX
+    </pre>
+
+    <fieldset>
+        <legend id="output">출력창</legend>
+    </fieldset>
+    <br>
+    <button onclick="putIn()" id="testInput">입력</button>
+    <button onclick="putOut()" id="testOutput">출력</button>
+    <div id="area1" class="area"></div>
+    <script>
+        const member = new Array();
+            member.name;
+            member.age;
+            member.addr;
+        
+            function putIn(){
+                member.name = prompt("이름 : ");
+                member.age = prompt("나이 : ");
+                member.addr = prompt("주소 : ");
+                console.log(member);
+            }
+            
+            function putOut(){
+                const area1 = document.getElementById("area1");
+                // area1.innerHTML = null;
+                
+                if(member.name != ""){
+                    area1.innerHTML += "이름 : " + member.name + "<br>";
+                }else{
+                    alert("내용을 입력해 주세요");
+                }
+                if(member.age != ""){
+                    area1.innerHTML += "나이 : " + member.age + "<br>";
+                }else{
+                    alert("내용을 입력해 주세요");
+                }
+                if(member.addr != ""){
+                    area1.innerHTML += "주소 : " + member.addr + "<br>";
+                }else{
+                    alert("내용을 입력해 주세요");
+                }
+            }
+    </script>
+
+
+</body>
+</html>

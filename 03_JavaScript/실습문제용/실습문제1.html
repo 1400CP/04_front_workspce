@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>행열 각각 입력받아 테이블 만들기</h4>
+    <button onclick="tableClick()">테이블 생성</button>
+    <h4>행열을 각각 입력받아서 새화면에서 출력하기</h4>
+    <button onclick="tableClick2()" id="outPut">출력버튼</button>
+    <div id="console"></div>
+    <script>
+        function tableClick(){
+            const row = Number(prompt("행입력"));
+            const col = Number(prompt("행입력"));
+            count = 1
+            var a = "<table border='1'>";
+                for(let i=0; i<row; i++){
+                    a += "<tr>"
+                        for(let j=0; j<col; j++){
+                            a += "<td>" + count++ + "</td>"
+                        }
+                    a += "</tr>";
+                }
+            a += "</table>";
+            document.write(a);
+        }
+
+        function tableClick2(){
+            const console = document.getElementById("console");
+            document.write(a);
+        }
+    </script>
+    
+
+
+</body>
+</html>

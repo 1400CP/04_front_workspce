@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h2>객체 실습 문제</h2>
+    <p>
+        문제2<br>
+        다음 입력 버튼 클릭시 학생 정보를 3명 저장받아 (for문 사용)<br>
+        테이블을 생성하여 출력하는 코드를 작성하세요 <br>
+        단, 학생 정보는 객체로 처리하여 저장 후 테이블에 입력하고 <br>
+        모든 학생 정보는 객체 배열에 저장하여 console.log(objectArr)로 출력 시 <br>
+        객체 배열 정보가 console.log에 나와야 함.
+    </p>
+
+    <table border = "1" width="200" height="400">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <center><p>학생정보 테이블</p></center>
+    <center><button onclick="inputData()" id="btn">입력 및 출력</button></center>
+    <div id="area2" class="area big"></div>
+    <script>
+        const objectArr = new Array(3);
+        objectArr.name;
+        objectArr.age;
+        objectArr.addr;
+
+        function inputData(){
+            for(let i=0; i<objectArr; i++){
+                object.name = prompt("이름 : ");
+                object.age = prompt("나이 : ");
+                object.addr = prompt("주소 : ");
+            }
+            console.log(objectArr);
+        }
+            // if(inputData() != null){
+                
+            // }else{
+            //     return inputData();
+            // }
+
+                // {
+                //     name : prompt(value + "번째 학생 이름 : "),
+                //     age : prompt(value + "번째 학생 나이 : "),
+                //     addr : prompt(value + "번째 학생 주소 : "),
+                // },
+
+    </script>
+
+
+</body>
+</html>

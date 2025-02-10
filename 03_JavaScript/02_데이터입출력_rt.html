@@ -168,7 +168,6 @@
     <button onclick="testPrompt2()">숫자입력</button>
 
     <ul id="area4">
-
     </ul>
 
     <script>
@@ -194,7 +193,6 @@
 
             // 위의 두줄을 한 줄로 줄이기
             document.getElementById("area4").innerHTML = str; 
-
         }
     </script>
 
@@ -206,9 +204,7 @@
     비밀번호 : <input type="password" id="userPwd" value=""> <br>
 
     <button onclick="testInput()">클릭</button>
-    <br>
     <input type="text" id="area5" value="">
-
     <script>
         function testInput(){
             var input1 = document.getElementById("userId"); // 아이디 input 요소 객체
@@ -225,11 +221,8 @@
             // 클릭 버튼을 누르면 아이디, 비번 인풋을 초기화 하고 싶다면?
             input1.value = "";
             input2.value = ""; // 변경해주고
-
-
         }
     </script>
-
 
 </body>
 </html>

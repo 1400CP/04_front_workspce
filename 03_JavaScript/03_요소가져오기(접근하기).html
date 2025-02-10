@@ -15,13 +15,9 @@
 <body>
 
     <h1>HTML 요소에 접근하기(해당 요소 객체 가져오기)</h1>
-
     <h3>1) 아이디를 이용해서 요소 가져오기</h3>
-    <div id="area1" class="area">
-
-    </div>
+    <div id="area1" class="area"></div>
     <button onclick="accessId()">아이디로 접근</button>
-
     <script>
         function accessId(){
             // 아이디로 요소 가져올 때
@@ -38,14 +34,12 @@
             area1.style.width = "200px";
             area1.sytle.height = "200px";
         }
-    
     </script>
 
     <br><br>
 
     <div id="area2" class="area" style="background-color: red;"></div>
     <button onclick="changeColor()">클릭마다 색 변경</button> <!-- 버튼을 누르면 function 안에 있는 내용을 수행-->
-
     <script>
         function changeColor(){
             var area2 = document.getElementById("area2");
@@ -56,14 +50,12 @@
             }else{
                 area2.style.backgroundColor = "red";
             }
-
         }
     </script>
 
     <br>
 
     <h3>2) 태그명을 이용해서 요소 가져오기</h3>
-
     <!-- ul>li{목록$}*5 -->
     <ul>
         <li>목록1</li>
@@ -74,7 +66,6 @@
     </ul>
 
     <button onclick="accessTagName()">태그명으로 접근</button>
-
     <script>
         function accessTagName(){
             // 태그명으로 요소 가져올 때★★
@@ -101,7 +92,6 @@
 
     <h3>3) name 속성값을 이용해서 요소 가져오기</h3>
     <form action="">
-
         <fieldset>
             <legend>취미</legend>
 
@@ -116,17 +106,11 @@
             
             <input type="checkbox" name="hobby" value="sports" id="sports">
             <label for="sports">운동</label>
-
-
         </fieldset>
-
     </form>
-
     <br>
-
     <div class="area" id="area3"></div>
     <button onclick="accessName()">name으로 접근</button>
-
     <script>
         function accessName(){
             // name 속성값으로 요소 가져올 때
@@ -134,7 +118,6 @@
             var hobby = document.getElementsByName("hobby"); // [input 요소객체, input 요소객체, ...]
 
             // console.log(hobby);
-
             for(var i=0; i<hobby.length; i++){
                 // console.log(hobby[i].checked); // hobby의 i번째 인덱스 요소가 체크됐는지 확인 // 체크하면 true, 아니면 false로 나옴
                 if(hobby[i].checked){ // 체크된 것이 맞으면
@@ -149,7 +132,6 @@
     <br>
 
     <h3>4) 클래스를 이용해서 요소 가져오기</h3>
-
     <!-- .test+p.test+ul.test>li*2 -->
     <div class="test"></div>
     <p class="test"></p>
@@ -160,7 +142,6 @@
     <pre class="test test1"></pre>
 
     <button onclick="accessClass()">클래스로 접근</button>
-
     <script>
         function accessClass(){
             // class 속성으로 요소 가져올 때
@@ -179,7 +160,6 @@
     <br>
 
     <h3>5) 내가 원하는 요소 자유자재로 가져오기 (선택자를 활용)</h3> <!-- 치트키 -->
-
     <div id="test1">테스트입니다.</div>
     <div class="test">
         <h2>안녕</h2>
@@ -188,11 +168,8 @@
     <span>ㅋㅋㅋ</span>
     <h2>빠이</h2>
     <span>ㅎㅅㅎ</span>
-
     <br>
-
     <button onclick="accessSelector()">클릭</button> <!-- 선택자에 접근-->
-
     <script>
         function accessSelector(){
             // 선택자를 이용해서 요소를 가져오고자 할 때
@@ -209,14 +186,9 @@
                 console.log(h2El[i].innerHTML)
             }
 
-            console.log(spanEl.innerHTML)
-
+            console.log(spanEl.innerHTML);
         }
     </script>
-
-
-
-
 
 </body>
 </html>
