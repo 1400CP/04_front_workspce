@@ -60,13 +60,11 @@
         주로 script 태그 내에 정의되어있는 함수 호출하는 방식으로 사용
     </p>
 
-    <button onclick="document.getElementById('area2').innerHTML += '첫번쨰 버튼 클릭 <br>'">실행확인</button>
+    <button onclick="document.getElementById('area2').innerHTML += '첫번째 버튼 클릭 <br>'">실행확인</button>
     <!-- ''를 사용해야 한다. -->
 
     <button onclick="test1()">실행확인</button>
-
     <div id="area2" class="area"></div>
-
     <script>
         function test1(){
             document.getElementById("area2").innerHTML += "두번째 버튼 클릭 <br>";
@@ -84,7 +82,6 @@
     </p>
     <!-- 요소내부에 직접적으로 이벤트 속성 기술 x -->
     <button id="btn3">실행확인</button>
-
     <script>
         const btn3 = document.getElementById("btn3");
 
@@ -92,18 +89,17 @@
         // 이벤트명 => click (on을 뺀 것!)
 
         // btn3.addEventListener(이벤트명, 이벤트 핸들러);
-        btn3.addEventListener("click", function(){
-            alert("표준 이벤트 모델 테스트")
-        });
+            btn3.addEventListener("click", function(){
+                alert("표준 이벤트 모델 테스트")
+            });
         // hover
-        btn3.addEventListener("mouseenter", function(){
-            btn3.style.backgroundColor = "red";
-        });
+            btn3.addEventListener("mouseenter", function(){
+                btn3.style.backgroundColor = "red";
+            });
 
-        btn3.addEventListener("mouseout", function(){
-            btn3.style.backgroundColor = "yellow";
-        });
-
+            btn3.addEventListener("mouseout", function(){
+                btn3.style.backgroundColor = "yellow";
+            });
     </script>
 
     <hr>
@@ -115,7 +111,6 @@
     <button onclick="test2()">인라인이벤트방식</button>
     <button onclick="test3(this)">인라인이벤트방식2</button>
     <!-- 스크립트 펑션에서 사용하기 편하려면 this를 넣어라 -->
-
     <script>
         // 고전이벤트 방식, 타겟이 가장 중요함
         document.getElementById("btn4").onclick = function(e){          // 이벤트 핸들러 e, 매개변수 e
@@ -133,7 +128,6 @@
             this.style.color = "white"
         }
 
-
         // 표준이벤트 방식
         // document.getElementById("btn5").addEventListener(이벤트명, 이벤트핸들러);         // 브라우저에 따라 오락가락한다.
         document.getElementById("btn5").addEventListener("click", function(e){ // 이벤트 핸들러
@@ -142,22 +136,17 @@
             console.log(this);
         });
 
-
         // 인라인 이벤트 방식
         function test2(e){      // 단순 함수
             // console.log(e);  // 딱히 넘겨받은 이벤트가 없기 떄문에 undefined가 뜬다.
             console.log(window.event.target);   // 이것만 사용 가능함.
             console.log(this);                  // window 객체를 가리킴
             window.event.target.innerHTML = "버튼변경";
-
         }
 
         function test3(el){
             el.style.backgroundColor = "green";
-
-
         }
-
     </script>
 
     <hr>
@@ -181,7 +170,6 @@
             alert("ggg");
             return false;           // 구글 이동이 되네?? 왜? onclick="test4()" 를 return false하기 떄문이다.
         }
-
         // 기본 이벤트를 향해서 return false가 되어야 하는데,
         // test4를 향해서 return false가 됨.
     </script>
@@ -209,12 +197,10 @@
                 alert("비밀번호가 일치하지 않습니다.");         // 알람창 호출!
                 return false;                               // return validate()으로 기본 이벤트 막기.
             }
-
             // 아이디에 대한 유효성 검사
             // 영문자 또는 숫자로만 5글자 이상 12글자 이하가 맞는지 => DB 용량. varchar2(12)
             // 안 맞는 경우, 알람창 출력 => 제출 불가능하게, 기본 이벤트 막기
 
-            const userId = document.getElementById("userId").value;
             /*
             if(userId.length >= 5 && userId.length <= 12){ // 글자수가 맞았을 경우
                 for(let i=0; i<userId.length; i++){
@@ -223,16 +209,27 @@
 
                     }
                 }
-            }else{                                          // 글자수가 틀렸다...
+            }else{              // 글자수가 틀렸다, 영문자가 아니다...
                 alert()
                 return false;
             }
             */
 
             // 이러한 식을 간소화하기 위해 나온 것이 정규표현식이다.
+            const userId = document.getElementById("userId").value;
+            const regExp = /^[a-zA-Z0-9]{5,12}$/
+            // /, ^(시작)$(끝), [a-zA-Z0-9] == a부터 z까지 A부터 Z까지 0부터9까지,
+            // {5,12} == 5글자 이상, 12글자 이하, /
 
+            if(!regExp.test(userId)){               // 만족하지 않을 경우를 적었다
+                // 맞으면 true, 틀리면 false
+                alert("유효한 아이디의 형식이 아닙니다. 다시 입력해주세요");
+
+                document.getElementById("userId").select(); // 드래그하듯이 선택해줌
+                return false;
+            }
+            // regExp 가 정규표현식이다.
         }
-
     </script>
 
 
