@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin : auto;
+        }
+
+        table{
+            width: 500px;
+            height: 500px;
+            margin : auto;
+            background-color: lightgray;
+        }
+
+        .tableId{
+            border : none;
+            width: 70%;
+            background-color: lightgray;
+        }
+
+        #passwordholder{
+            color: gray;
+        }
+
+        #green{
+            background-color: yellowgreen;
+            width: 400px;
+            height: 30px;
+        }
+
+        #member{
+            font-size: 20px;
+            border : none;
+            background-color: yellowgreen;
+            color : green;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="test.do" method="get">
+        <table id="table">
+            <tr id="userId">
+                <td>아이디</td>
+                <td>
+                    <label>
+                        <input type="text" id="userId" class="tableId" required> <br>
+                        _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td>
+                    <label>
+                        <input type="password" id="userPwd" onclick="check1(this.id)" class="tableId" required> <br>
+                        _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="passwordholder" style="display:none;" >영문자 대/소문자 특수문자, 숫자 포함 8~32자</td>
+            </tr>
+            <tr>
+                <td>패스워드 확인</td>
+                <td>
+                    <label>
+                        <input type="password" id="userCheck" class="tableId" required> <br>
+                        _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td>
+                    <label>
+                        <input type="email" id="userEmail" class="tableId"> <br>
+                        _ _ _ _ _ _ _ _ _@_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td>
+                    <label>
+                        <input type="text" id="userAddr" class="tableId"> <br>
+                        _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div id="green">
+            <center>
+                <input type="submit" onclick="return member()" id="member" value="가입">
+            </center>
+        </div>
+    </form>
+    <script>
+        const check1 = function(id){
+            console.log(id);
+            const test1 = document.getElementById(id);
+            if(id === "userPwd"){
+                passwordholder.style.display = "block";
+            }else{
+                passwordholder.style.display = "none";
+            }
+        }
+
+        function member(){
+            const userId = document.getElementById("userId").value;
+            const userPwd = document.getElementById("userPwd").value;
+            const userCheck = document.getElementById("userCheck").value;
+            const userEmail = document.getElementById("userEmail").value;
+            const userAddr = document.getElementById("userAddr").value;
+
+            let regExp1 = /^.{32}$/;
+            let regExp = /^[a-zA-Z0-9][\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]{8,32}$/g;
+
+            // /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g
+
+            if(!regExp1.test(userId)){
+                alert("아이디는 필수 입력 항목입니다.")
+            }else if(!regExp.test(userPwd)){
+                alert("패스워드는 필수 입력 항목입니다.")
+            }else if(!regExp.test(userCheck)){
+                alert("패스워드확인은 필수 입력 항목입니다.")
+            }
+
+            // if(!regExp.test(userPwd)){
+            //     alert("패스워드는 필수 입력 항목입니다.")
+            // }
+            // if(!regExp.test(userCheck)){
+            //     alert("패스워드확인은 필수 입력 항목입니다.")
+            // }
+            // if(userPwd != userCheck){
+            //     alert("비밀번호가 맞지 않습니다.")
+            //     // return false;
+            // }
+
+            // if(userId == none){
+            //     // 맞으면 true, 틀리면 false
+            //     alert("아이디는 필수 입력 항목입니다.");
+            // }else if(userPwd == none){
+            //     // 맞으면 true, 틀리면 false
+            //     alert("패스워드는 필수 입력 항목입니다.");
+            // }else if(userCheck == none){
+            //     // 맞으면 true, 틀리면 false
+            //     alert("패스워드 확인은 필수 입력 항목입니다.");
+            // }
+
+            // if(userId == null){                        
+            //     alert("필수 입력 항목입니다.");                             
+            // }
+            // if(userPwd == null){
+            //     alert("필수 입력 항목입니다.");
+            // }
+            // if(userCheck == null){
+            //     alert("필수 입력 항목입니다.");  
+            // };
+
+            // 
+            // if(userPwd.length >= 8 && userPwd.length <= 32){
+            //     for(let i=0; i<userPwd.length; i++){
+            //         if(regExp.test(userPwd)){
+            //             alert("맞음");
+            //         }else{
+            //             alert("안돼");
+            //         }
+            //     }
+            // }else{              // 글자수가 틀렸다, 영문자가 아니다...
+            //     alert()
+            //     return false;
+            // }
+        }
+    </script>
+
+</body>
+</html>
