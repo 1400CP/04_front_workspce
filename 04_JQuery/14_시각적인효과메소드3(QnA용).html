@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <style>
+        div{
+            background-color: beige;
+            border: 1px solid yellow;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            /* 원형처럼 만드는 것것 */
+            cursor: pointer;
+        }
+
+        p{
+            border: 1px solid lightgray;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <h3>* slideDown()과 slideUp()</h3>
+
+    <!-- (div+p)*5 -->
+    <div>Q. 반품 언제되나요?</div>
+    <p>A. 지금 확인중입니다.</p>
+
+    <div>Q. 상품 위치를 알고 싶습니다.</div>
+    <p>A. 배송조회 해보세요.</p>
+
+    <div>Q. 8XL 사이즈도 있나요?</div>
+    <p>A. 있어요?</p>
+
+    <div>Q. 판매자가 연락이 안 됩니다.</div>
+    <p>A. 저도요.</p>
+
+    <div>Q. 연락 가능한 시간을 알려주세요.</div>
+    <p>A. 고객센터 전번은 아래와 같습니다.</p>
+
+    <script>
+        $(function(){
+            $("div").click(function(){
+                // $(this) : 클릭이벤트가 발생한 그 요소
+                // 우리는 바로 그 요소의 바로 뒤의 요소인 p를 선택해야 함.
+                // 동위 / 형제에 있네?
+
+                // $(this).next() : 클릭이벤트가 발생한 div요소 바로 뒤에 있는 p요소
+                // 보여지는 상태면 사라지게, 안보이면 나타나게
+
+                const $p = $(this).next(); // 누른 동위 / 형제인 p를 가리킨다.
+                // $p로 쓰는 이유는 jQuery로 썼기 때문. (알려주기 위함, 약속)
+
+                // if($p.css("display")) // 이 속성에 대한 것을 반환한다.
+                // if($p.css("display") == "none"){
+                //     // $p.css("display","block");
+                //     $p.slideDown(); // 미끌어지듯이 내려옴
+                // }else{
+                //     $p.slideUp();
+                // }
+                
+                // 기존 것은 닫히고, 클릭한 것만 열리게 하는 방법은??
+                if($p.css("display") == "none"){
+                    // if($("div").siblings().css("display") == "block"){
+                    $("div").next("p").css("display", "none")
+                    // }
+                    $p.css("display","block");
+                }else{
+                    $p.slideUp();
+                }
+
+                // if($p.css("display") == "none"){
+                //     $(this).siblings("p").slideUp();
+                //     $p.slideDown(); // 미끌어지듯이 내려옴
+                // }else{
+                //     $p.slideUp();
+                // }
+            })
+        })
+    </script>
+</body>
+</html>
